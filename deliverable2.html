@@ -167,25 +167,34 @@
                 width: 100%;
                 display: flex;
                 justify-content: center;
+                margin-bottom: 50px;
             }
             
             .content__pageButton--selected {
                 text-align: center;
+                font-family: Trebuchet MS, sans-serif;
+                color: lightgray;
+                font-size: 15pt;
                 float: left;
                 width: 50px;
                 height: 50px;
+                border: none;
                 border-radius: 50%;
-                background-color: gray;
+                background-color: black;
                 margin: 5px;
             }
             
             .content__pageButton--unselected {
                 text-align: center;
+                font-family: Trebuchet MS, sans-serif;
+                color: black;
+                font-size: 15pt;
                 float: left;
                 width: 50px;
                 height: 50px;
+                border: none;
                 border-radius: 50%;
-                background-color: gray;
+                background-color: lightgray;
                 margin: 5px;
             }
 
@@ -529,10 +538,10 @@
                         <p class="content__article__date">27. Juni 2015</p>
                     </section>
                     <div class="content__pagination">
-                        <div class="content__pageButton--selected">1</div>
-                        <div class="content__pageButton--unselected">2</div>
-                        <div class="content__pageButton--unselected">3</div>
-                        <div class="content__pageButton--unselected">4</div>
+                        <button class="content__pageButton--selected">1</button>
+                        <button class="content__pageButton--unselected">2</button>
+                        <button class="content__pageButton--unselected">3</button>
+                        <button class="content__pageButton--unselected">4</button>
                     </div>
                 </div>
             </div>
