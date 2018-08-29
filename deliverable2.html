@@ -1,0 +1,656 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <style>
+            html {
+                width: 100%;
+                margin: 0;
+            }
+
+            body {
+                width: 100%;
+                margin: 0;
+                background-color: rgb(245,245,245);
+            }
+
+            .navigation__container {
+                width: 100%;
+                height: 350px;
+                padding-top: 50px;
+                background-image: url("https://c.pxhere.com/photos/53/88/clouds_cloudy_fog_foggy_forest_grass_HD_wallpaper_landscape-911049.jpg!d");
+                background-color: beige;
+                background-position: center;
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+
+                text-align: center;
+            }
+
+            .navigation__top {
+                width: 85%;
+                margin-left: auto;
+                margin-right: auto;
+
+                display: flex;
+                flex-direction:row;
+                flex-wrap: wrap;
+                justify-content: space-between;
+            }
+
+            .navigation__socialMediaIcon {
+                width: 30px;
+                height: 30px;
+            }
+
+            .navigation__searchBox {
+                height: 30px;
+                font-size: 20px;
+                padding: 5px;
+                margin: 0;
+                float: left;
+            }
+
+            .navigation__submitButton {
+                background-color: black;
+                background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Antu_document-edit-verify.svg/512px-Antu_document-edit-verify.svg.png");
+                background-position: center;
+                background-size: 20px 20px;
+                background-repeat: no-repeat;
+                border: 1px solid black;
+                font-size: 0;
+                height: 30px;
+                width: 50px;
+                padding: 5px;
+                margin: 0;
+                float: left;
+            }
+
+            .navigation__title {
+                color: firebrick;
+                font-size: 40pt;
+                font-family: Trebuchet MS, sans-serif;
+                line-height: 50%;
+            }
+
+            .navigation__subtitle {
+                color: white;
+                font-size: 25pt;
+                font-family: serif;
+                font-style: italic;
+                line-height: 50%;
+            }
+
+            .navigation__menuBox {
+                background-color: rgba(255, 255, 255, 0.2);
+                width: 90%;
+                margin-left: auto;
+                margin-right: auto;
+                padding-top: 10px;
+                padding-bottom: 10px;
+                padding-left: 25px;
+                padding-right: 25px;
+
+                display: flex;
+                flex-direction:row;
+                flex-wrap: wrap;
+                justify-content: space-around;
+            }
+
+            .navigation__menu__option {
+                color: white;
+                font-size: 15pt;
+                font-family: Trebuchet MS, sans-serif;
+            }
+            
+            .godClass {
+                display: flex;
+                justify-content: center;
+            }
+
+            .content {
+                width: 725px;
+                float: left;
+                padding-left: 10px;
+            }
+
+            /*.content__grid {
+              display: grid;
+              grid-template-columns: 300px 300px 300px;
+              grid-gap: 20px;
+            }
+
+            @media (max-width: 1300px) {
+                .content__grid {
+                  grid-template-columns: 300px 300px;
+                }
+            }*/
+
+            .content__header {
+                font-family: Trebuchet MS, sans-serif;
+                color: firebrick;
+                font-size: 18pt;
+            }
+
+            .content__section {
+                width: 300px;
+                float: left;
+                margin: 5px;
+
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-end;
+                text-align: center;
+            }
+
+            .content__article__image {
+                width: 300px;
+                height: 200px;
+            }
+
+            .content__article__category {
+                font-family: Trebuchet MS, sans-serif;
+            }
+
+            .content__article__title {
+                font-family: Trebuchet MS, sans-serif;
+                font-weight: bold;
+            }
+
+            .content__article__date {
+                font-family: Trebuchet MS, sans-serif;
+                color: gray;
+            }
+            
+            .content__pagination {
+                width: 100%;
+                display: flex;
+                justify-content: center;
+            }
+            
+            .content__pageButton--selected {
+                text-align: center;
+                float: left;
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                background-color: gray;
+                margin: 5px;
+            }
+            
+            .content__pageButton--unselected {
+                text-align: center;
+                float: left;
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                background-color: gray;
+                margin: 5px;
+            }
+
+            .sideBar {
+                width: 310px;
+                float: left;
+                padding-top: 65px;
+            }
+
+            .sideBar__header {
+                width: 200px;
+                padding: 10px;
+                margin-bottom: 15px;
+                margin-left: auto;
+                margin-right: auto;
+                background-color: firebrick;
+                text-align: center;
+                font-family: Trebuchet MS, sans-serif;
+                color: white;
+                font-size: 18pt;
+            }
+
+            .sideBar__separator {
+                width: 80%;
+                height: 20px;
+                margin-top: 5px;
+                margin-left: auto;
+                margin-right: auto;
+                border-top: firebrick solid 2px;
+            }
+
+            .sideBar__profileImage {
+                width: 150px;
+                height: 150px;
+                background-image: url("http://www.europarl.europa.eu/mepphoto/1911.jpg");
+                background-size: 150px;
+                border-radius: 50%;
+                margin-bottom: 10px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .sideBar__text {
+                text-align: center;
+                color: gray;
+                margin: 0;
+                font-weight: bold;
+                font-family: Trebuchet MS, sans-serif;
+            }
+
+            .sideBar__signature {
+                width: 200px;
+                margin-top: 10px;
+                margin-left: 20%;
+            }
+
+            .sideBar__form {
+                margin-top: 20px;
+                margin-bottom: 20px;
+                margin-left: auto;
+                margin-right: auto;
+                width: 181px;
+                min-height: 30px;
+            }
+
+            .sideBar__form__inputEmail {
+                float: left;
+                position: relative;
+                margin: 0;
+                width: 150px;
+                height: 25px;
+                border: 1px solid lightgray;
+                background-color: lightgray;
+            }
+
+            .sideBar__form__submit {
+                float: left;
+                position: relative;
+                margin: 0;
+                width: 29px;
+                height: 29px;
+                border: 1px solid lightgray;
+                background-color: lightgray;
+                background-image: url("https://upload.wikimedia.org/wikipedia/commons/7/74/Envelope_alt_font_awesome.svg");
+                background-position: center;
+                background-size: 15px 15px;
+                background-repeat: no-repeat;
+                font-size: 0;
+            }
+            
+            .sideBar__list {
+                color: black;
+                font-family: Trebuchet MS, sans-serif;
+            }
+            
+            .sideBar__list__item {
+                list-style-type: none;
+                line-height: 180%;
+            }
+            
+            .sideBar__list__item:before {
+                content: "• ";
+                color: firebrick;
+            }
+            
+            .sideBar__latestPosts {
+                width: 300px;
+                height: 50px;
+            }
+            
+            .sideBar__latestPosts__post {
+                float: left;
+                margin-bottom: 15px;
+                height: 50px;
+            }
+            
+            .sideBar__latestPosts__image {
+                float: left;
+                width: 50px;
+                height: 50px;
+            }
+            
+            .sideBar__latestPosts__textContainer {
+                float: left;
+                height: 50px;
+                width: 235px;
+                padding-left: 15px;
+            }
+            
+            .sideBar__latestPosts__textContainer__title {
+                font-family: Trebuchet MS, sans-serif;
+                font-weight: bold;
+                margin: 0;
+            }
+            
+            .sideBar__latestPosts__textContainer__date {
+                font-family: Trebuchet MS, sans-serif;
+                color: gray;
+                margin: 0;
+                line-height: 250%;
+            }
+            
+            .sideBar__ad {
+                width: 300px;
+                margin-bottom: 15px;
+            }
+            
+            .sideBar__facebookPlugin {
+                margin-left: auto;
+                margin-right: auto;
+            }
+            
+            .sideBar__gallery {
+                margin-left: auto;
+                margin-right: auto;
+                width: 300px;
+                text-align: center;
+            }
+            
+            .sideBar__gallery__photo {
+                width: 75px;
+                height: 75px;
+            }
+            
+            .pageFooter {
+                float: left;
+                clear: both;
+                width: 100%;
+                height: 250px;
+            }
+            
+            .pageFooter__gallery {
+                width: 100%;
+                height: 250px;
+                overflow: hidden;
+                text-align: center;
+                white-space: nowrap;
+                margin: 0;
+                padding: 0;
+                font-size: 0;
+            }
+            
+            .pageFooter__gallery__photo {
+                display: inline-block;
+                vertical-align: top;
+                margin: 0;
+                padding: 0;
+                float: none;
+                width: 250px;
+                height: 250px;
+            }
+            
+            .pageFooter__container {
+                margin-left: auto;
+                margin-right: auto;
+                margin-top: 15px;
+                margin-bottom: 15px;
+                width: calc(100% - 25px);
+                height: 230px;
+                background-color: black;
+                text-align: center;
+                line-height: 200px;
+            }
+            
+            .pageFooter__container__copyright {
+                color: white;
+                font-family: Trebuchet MS, sans-serif;
+                font-size: 14pt;
+                display: inline-block;
+                vertical-align: middle;
+            }
+            
+            .pageFooter__gallery__instagramButton {
+                position: absolute;
+                margin-top: 100px;
+                margin-left: 25%;
+                padding: 20px;
+                border: none;
+                background-color: white;
+                color: black;
+                font-family: Trebuchet MS, sans-serif;
+                font-size: 14pt;
+                letter-spacing: 4px;
+            }
+        </style>
+    </head>
+    <body>
+        <nav>
+            <div class="navigation__container">
+                <div class="navigation__top">
+                    <div class="navigation__socialMediaLinks">
+                        <a><img class="navigation__socialMediaIcon" src="https://upload.wikimedia.org/wikipedia/commons/c/c2/F_icon.svg"></a>
+                        <a><img class="navigation__socialMediaIcon" src="https://upload.wikimedia.org/wikipedia/fr/c/c8/Twitter_Bird.svg"></a>
+                        <a><img class="navigation__socialMediaIcon" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Instagram_logo_2016.svg/132px-Instagram_logo_2016.svg.png"></a>
+                        <a><img class="navigation__socialMediaIcon" src="https://upload.wikimedia.org/wikipedia/commons/4/4d/Pinterest.svg"></a>
+                        <a><img class="navigation__socialMediaIcon" src="https://upload.wikimedia.org/wikipedia/commons/2/2d/Google_Plus_logo_2015.svg"></a>
+                    </div>
+                    <div class="navigation__searchBoxContainer">
+                        <form>
+                            <input type="search" placeholder="Search" class="navigation__searchBox">
+                            <input type="submit" class="navigation__submitButton">
+                        </form>
+                    </div>
+                </div>
+                <div class="navigation__titleContainer">
+                    <h1 class="navigation__title">Martin Schulz</h1>
+                    <p class="navigation__subtitle">Persönlicher Blog</p>
+                </div>
+                <div class="navigation__menuBox">
+                    <a class="navigation__menu__option">HOME</a>
+                    <a class="navigation__menu__option">REISE</a>
+                    <a class="navigation__menu__option">TAGEBUCH</a>
+                    <a class="navigation__menu__option">DESIGN</a>
+                    <a class="navigation__menu__option">LEBENSSTIL</a>
+                    <a class="navigation__menu__option">ÜBER MICH</a>
+                </div>
+            </div>
+        </nav>
+        <div class="godClass">
+            <div class="content">
+                <h2 class="content__header">Kategorien: Reise</h2>
+                <div class="content__grid">
+                    <section class="content__section">
+                        <img class="content__article__image" src="https://c.pxhere.com/photos/01/15/chairs_conference_room_long_table_office_table_windows-1366229.jpg!d">
+                        <p class="content__article__title">Dekorieren neues Home-Office</p>
+                        <p class="content__article__date">27. Juni 2015</p>
+                    </section>
+                    <section class="content__section">
+                        <img class="content__article__image" src="https://c.pxhere.com/photos/01/15/chairs_conference_room_long_table_office_table_windows-1366229.jpg!d">
+                        <p class="content__article__title">Dekorieren neues Home-Office</p>
+                        <p class="content__article__date">27. Juni 2015</p>
+                    </section>
+                    <section class="content__section">
+                        <img class="content__article__image" src="https://c.pxhere.com/photos/01/15/chairs_conference_room_long_table_office_table_windows-1366229.jpg!d">
+                        <p class="content__article__title">Dekorieren neues Home-Office</p>
+                        <p class="content__article__date">27. Juni 2015</p>
+                    </section>
+                    <section class="content__section">
+                        <img class="content__article__image" src="https://c.pxhere.com/photos/01/15/chairs_conference_room_long_table_office_table_windows-1366229.jpg!d">
+                        <p class="content__article__title">Dekorieren neues Home-Office</p>
+                        <p class="content__article__date">27. Juni 2015</p>
+                    </section>
+                    <section class="content__section">
+                        <img class="content__article__image" src="https://c.pxhere.com/photos/01/15/chairs_conference_room_long_table_office_table_windows-1366229.jpg!d">
+                        <p class="content__article__title">Dekorieren neues Home-Office</p>
+                        <p class="content__article__date">27. Juni 2015</p>
+                    </section>
+                    <section class="content__section">
+                        <img class="content__article__image" src="https://c.pxhere.com/photos/01/15/chairs_conference_room_long_table_office_table_windows-1366229.jpg!d">
+                        <p class="content__article__title">Dekorieren neues Home-Office</p>
+                        <p class="content__article__date">27. Juni 2015</p>
+                    </section>
+                    <section class="content__section">
+                        <img class="content__article__image" src="https://c.pxhere.com/photos/01/15/chairs_conference_room_long_table_office_table_windows-1366229.jpg!d">
+                        <p class="content__article__title">Dekorieren neues Home-Office</p>
+                        <p class="content__article__date">27. Juni 2015</p>
+                    </section>
+                    <section class="content__section">
+                        <img class="content__article__image" src="https://c.pxhere.com/photos/01/15/chairs_conference_room_long_table_office_table_windows-1366229.jpg!d">
+                        <p class="content__article__title">Dekorieren neues Home-Office</p>
+                        <p class="content__article__date">27. Juni 2015</p>
+                    </section>
+                    <section class="content__section">
+                        <img class="content__article__image" src="https://c.pxhere.com/photos/01/15/chairs_conference_room_long_table_office_table_windows-1366229.jpg!d">
+                        <p class="content__article__title">Dekorieren neues Home-Office</p>
+                        <p class="content__article__date">27. Juni 2015</p>
+                    </section>
+                    <section class="content__section">
+                        <img class="content__article__image" src="https://c.pxhere.com/photos/01/15/chairs_conference_room_long_table_office_table_windows-1366229.jpg!d">
+                        <p class="content__article__title">Dekorieren neues Home-Office</p>
+                        <p class="content__article__date">27. Juni 2015</p>
+                    </section>
+                    <section class="content__section">
+                        <img class="content__article__image" src="https://c.pxhere.com/photos/01/15/chairs_conference_room_long_table_office_table_windows-1366229.jpg!d">
+                        <p class="content__article__title">Dekorieren neues Home-Office</p>
+                        <p class="content__article__date">27. Juni 2015</p>
+                    </section>
+                    <section class="content__section">
+                        <img class="content__article__image" src="https://c.pxhere.com/photos/01/15/chairs_conference_room_long_table_office_table_windows-1366229.jpg!d">
+                        <p class="content__article__title">Dekorieren neues Home-Office</p>
+                        <p class="content__article__date">27. Juni 2015</p>
+                    </section>
+                    <section class="content__section">
+                        <img class="content__article__image" src="https://c.pxhere.com/photos/01/15/chairs_conference_room_long_table_office_table_windows-1366229.jpg!d">
+                        <p class="content__article__title">Dekorieren neues Home-Office</p>
+                        <p class="content__article__date">27. Juni 2015</p>
+                    </section>
+                    <section class="content__section">
+                        <img class="content__article__image" src="https://c.pxhere.com/photos/01/15/chairs_conference_room_long_table_office_table_windows-1366229.jpg!d">
+                        <p class="content__article__title">Dekorieren neues Home-Office</p>
+                        <p class="content__article__date">27. Juni 2015</p>
+                    </section>
+                    <section class="content__section">
+                        <img class="content__article__image" src="https://c.pxhere.com/photos/01/15/chairs_conference_room_long_table_office_table_windows-1366229.jpg!d">
+                        <p class="content__article__title">Dekorieren neues Home-Office</p>
+                        <p class="content__article__date">27. Juni 2015</p>
+                    </section>
+                    <section class="content__section">
+                        <img class="content__article__image" src="https://c.pxhere.com/photos/01/15/chairs_conference_room_long_table_office_table_windows-1366229.jpg!d">
+                        <p class="content__article__title">Dekorieren neues Home-Office</p>
+                        <p class="content__article__date">27. Juni 2015</p>
+                    </section>
+                    <div class="content__pagination">
+                        <div class="content__pageButton--selected">1</div>
+                        <div class="content__pageButton--unselected">2</div>
+                        <div class="content__pageButton--unselected">3</div>
+                        <div class="content__pageButton--unselected">4</div>
+                    </div>
+                </div>
+            </div>
+            <div class="sideBar">
+                <section class="sideBar__section">
+                    <div class="sideBar__header">Über mich</div>
+                    <div class="sideBar__profileImage"></div>
+                    <p class="sideBar__text">
+                        Hallo alle! Ich bin Martin Schulz aus Hehlrath, Deutschland. Ich liebe Rot.
+                    </p>
+                    <img class="sideBar__signature" src="https://upload.wikimedia.org/wikipedia/commons/f/fd/Martin_Schulz_Unterschrift.svg">
+                    <div class="sideBar__separator"></div>
+                </section>
+                <section class="sideBar__section">
+                    <div class="sideBar__header">Mitteilungsblatt</div>
+                    <p class="sideBar__text">Melde dich an, um meine neuesten Nachrichten zu erhalten.</p>
+                    <form class="sideBar__form">
+                        <input class="sideBar__form__inputEmail" type="email">
+                        <input class="sideBar__form__submit" type="submit">
+                    </form>
+                    <div class="sideBar__separator"></div>
+                </section>
+                <section class="sideBar__section">
+                    <div class="sideBar__header">Kategorien</div>
+                    <ul class="sideBar__list">
+                        <li class="sideBar__list__item">Design (11)</li>
+                        <li class="sideBar__list__item">Reise (11)</li>
+                        <li class="sideBar__list__item">
+                            Tagebuch (11)
+                            <ul>
+                                <li class="sideBar__list__item">Tagebuch (11)</li>
+                                <li class="sideBar__list__item">Tagebuch (11)</li>
+                                <li class="sideBar__list__item">Tagebuch (11)</li>
+                            </ul>
+                        </li>
+                        <li class="sideBar__list__item">Tagebuch (11)</li>
+                        <li class="sideBar__list__item">Tagebuch (11)</li>
+                    </ul>
+                    <div class="sideBar__separator"></div>
+                </section>
+                <section class="sideBar__section">
+                    <div class="sideBar__header">Kürzliche Posts</div>
+                    <div class="sideBar__latestPosts">
+                        <div class="sideBar__latestPosts__post">
+                            <img class="sideBar__latestPosts__image" src="https://c1.staticflickr.com/2/1787/29262681878_89e6b60e5a_b.jpg">
+                            <div class="sideBar__latestPosts__textContainer">
+                                <p class="sideBar__latestPosts__textContainer__title">Der Leuchtturm</p>
+                                <p class="sideBar__latestPosts__textContainer__date">27. Juni 2015</p>
+                            </div>
+                        </div>
+                        <div class="sideBar__latestPosts__post">
+                            <img class="sideBar__latestPosts__image" src="https://media.licdn.com/dms/image/C4D03AQEDJIOXewdrPw/profile-displayphoto-shrink_200_200/0?e=1539216000&v=beta&t=Tj2JXEz0RrEjS2zF69XzdPXGGWaSScMstjglk5UvTOg">
+                            <div class="sideBar__latestPosts__textContainer">
+                                <p class="sideBar__latestPosts__textContainer__title">Der Kevin</p>
+                                <p class="sideBar__latestPosts__textContainer__date">27. Juni 2015</p>
+                            </div>
+                        </div>
+                        <div class="sideBar__latestPosts__post">
+                            <img class="sideBar__latestPosts__image" src="https://upload.wikimedia.org/wikipedia/commons/a/ae/View_from_Humboldtbox_-_Berlin_Cathedral.jpg">
+                            <div class="sideBar__latestPosts__textContainer">
+                                <p class="sideBar__latestPosts__textContainer__title">Der Leuchtturm</p>
+                                <p class="sideBar__latestPosts__textContainer__date">27. Juni 2015</p>
+                            </div>
+                        </div>
+                        <div class="sideBar__latestPosts__post">
+                            <img class="sideBar__latestPosts__image" src="https://cdn.pixabay.com/photo/2016/01/05/08/12/siegessaule-1122099_960_720.jpg">
+                            <div class="sideBar__latestPosts__textContainer">
+                                <p class="sideBar__latestPosts__textContainer__title">Der Leuchtturm</p>
+                                <p class="sideBar__latestPosts__textContainer__date">27. Juni 2015</p>
+                            </div>
+                        </div>
+                        <div class="sideBar__latestPosts__post">
+                            <img class="sideBar__latestPosts__image" src="https://upload.wikimedia.org/wikipedia/commons/a/a4/SPD_logo.svg">
+                            <div class="sideBar__latestPosts__textContainer">
+                                <p class="sideBar__latestPosts__textContainer__title">Der Leuchtturm</p>
+                                <p class="sideBar__latestPosts__textContainer__date">27. Juni 2015</p>
+                            </div>
+                        </div>
+                    </div>
+                    <img class="sideBar__ad" src="https://cdn.pixabay.com/photo/2017/02/11/18/41/frankfurt-2058356_960_720.jpg">
+                    <div class="sideBar__separator"></div>
+                </section>
+                <section class="sideBar__section">
+                    <div class="sideBar__header">Facebook</div>
+                    <iframe class="sideBar__facebookPlugin" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FArnosplaatjevoorjou%2F&tabs&width=300&height=214&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" width="300" height="214" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+                    <div class="sideBar__separator"></div>
+                </section>
+                <section class="sideBar__section">
+                    <div class="sideBar__header">Bildposten</div>
+                    <div class="sideBar__gallery">
+                        <img class="sideBar__gallery__photo" src="https://cdn.pixabay.com/photo/2016/01/05/08/12/siegessaule-1122099_960_720.jpg">
+                        <img class="sideBar__gallery__photo" src="https://cdn.pixabay.com/photo/2016/01/05/08/12/siegessaule-1122099_960_720.jpg">
+                        <img class="sideBar__gallery__photo" src="https://cdn.pixabay.com/photo/2016/01/05/08/12/siegessaule-1122099_960_720.jpg">
+                        <img class="sideBar__gallery__photo" src="https://cdn.pixabay.com/photo/2016/01/05/08/12/siegessaule-1122099_960_720.jpg">
+                        <img class="sideBar__gallery__photo" src="https://cdn.pixabay.com/photo/2016/01/05/08/12/siegessaule-1122099_960_720.jpg">
+                        <img class="sideBar__gallery__photo" src="https://cdn.pixabay.com/photo/2016/01/05/08/12/siegessaule-1122099_960_720.jpg">
+                    </div>
+                </section>
+            </div>
+        </div>
+        <footer class="pageFooter">
+            <div class="pageFooter__gallery">
+                <button class="pageFooter__gallery__instagramButton">INSTAGRAM</button>
+                <img class="pageFooter__gallery__photo" src="https://upload.wikimedia.org/wikipedia/commons/a/ae/View_from_Humboldtbox_-_Berlin_Cathedral.jpg">
+                <img class="pageFooter__gallery__photo" src="https://c1.staticflickr.com/2/1787/29262681878_89e6b60e5a_b.jpg">
+                <img class="pageFooter__gallery__photo" src="https://www.maxpixel.net/static/photo/1x/Frankfurt-Am-Main-Frankfurt-City-Germany-2060946.jpg">
+                <img class="pageFooter__gallery__photo" src="https://cdn.pixabay.com/photo/2016/01/05/08/12/siegessaule-1122099_960_720.jpg">
+                <img class="pageFooter__gallery__photo" src="https://upload.wikimedia.org/wikipedia/commons/b/b3/Supremus_55_%28Malevich%2C_1916%29.jpg">
+                <img class="pageFooter__gallery__photo" src="https://upload.wikimedia.org/wikipedia/commons/0/09/Rivista_wendingen_%28inversioni%29%2C_1921%2C_n._11%2C_copertina_di_El_Lissitzky_01.jpg">
+                <img class="pageFooter__gallery__photo" src="https://upload.wikimedia.org/wikipedia/commons/1/1d/William_Turner-_The_Angel%2C_Standing_in_the_Sun.JPG">
+                <img class="pageFooter__gallery__photo" src="https://upload.wikimedia.org/wikipedia/commons/a/ae/Naval_Jack_of_Belgium.svg">
+                <img class="pageFooter__gallery__photo" src="https://pbs.twimg.com/profile_images/718068470722596865/5XEsgXKm_400x400.jpg">
+            </div>
+            <div class="pageFooter__container">
+                <p class="pageFooter__container__copyright">
+                    &copy; 2018 Martin Schulz, Alle Rechte vorbehalten. Entworfen durch Bryan Kho
+                </p>
+            </div>
+        </footer>
+    </body>
+</html>
